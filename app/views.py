@@ -28,7 +28,7 @@ def search(request):
     name = request.POST.get('query', '')
 
     # si el usuario ingresó algo en el buscador, se deben filtrar las imágenes por dicho ingreso.
-    if name != '':
+    if name:
         images = services.filterByCharacter(name)
         favourite_list = services.getAllFavourites(request)
         return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
