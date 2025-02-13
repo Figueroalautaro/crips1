@@ -48,8 +48,8 @@ def filterByHouse(house_name):
     filtered_cards = []
 
     for card in getAllImages():
-        # debe verificar si la casa de la card coincide con la recibida por parámetro. Si es así, se añade al listado de filtered_cards.
-        filtered_cards.append(card)
+        if card.house.lower() == house_name.lower(): # debe verificar si la casa de la card coincide con la recibida por parámetro. Si es así, se añade al listado de filtered_cards.
+            filtered_cards.append(card)
 
     return filtered_cards
 
